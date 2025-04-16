@@ -1,0 +1,117 @@
+# 🗓️ React.js Mastery Roadmap – 12 Week Plan
+
+## 🔰 Weeks 1-2: Basics & Core Concepts
+
+### Goal: Understand React fundamentals
+
+#### ✅ Topics:
+
+-   JSX
+-   Components (Function-based)
+-   Props and State
+-   Event Handling
+-   Conditional Rendering
+-   Lists & Keys
+
+#### 🔨 Projects:
+
+-   Counter App
+-   To-Do List
+-   Calculator
+-   Digital Clock
+-   Color Picker
+
+## 🧰 Weeks 3-4: Hooks, Forms & Effects
+
+### Goal: Learn about React Hooks and forms
+
+#### ✅ Topics:
+
+-   useState, useEffect, useRef
+-   Forms & basic validation
+-   Controlled vs Uncontrolled inputs
+
+#### 🔨 Projects:
+
+-   Simple Form with Validation
+-   Weather App (with API)
+-   GitHub User Finder
+-   Movie Search App
+
+## 🧩 Weeks 5-6: Routing, Context & UI State
+
+### Goal: Understand routing and manage global state
+
+#### ✅ Topics:
+
+-   react-router-dom
+-   Context API
+-   Basic Component Reusability
+-   Conditional Navigation
+
+#### 🔨 Projects:
+
+-   Portfolio Website with Routing
+-   Quiz App
+-   Expense Tracker
+-   Theme Switcher App
+
+## 🔄 Weeks 7-8: Advanced State & APIs
+
+### Goal: Complex logic, data fetching, advanced hooks
+
+#### ✅ Topics:
+
+-   Custom Hooks
+-   Pagination & Filtering
+-   LocalStorage
+-   Error Handling
+
+#### 🔨 Projects:
+
+-   Recipe Finder App
+-   Task Management Dashboard
+-   Notes App with Local Storage
+-   Job Listing App
+
+## 🚀 Weeks 9-10: State Management & Realtime
+
+### Goal: Master app-wide state and live updates
+
+####✅ Topics:
+
+-   Redux Toolkit / Zustand
+-   Firebase / Socket.IO for realtime apps
+-   Protected Routes & Authentication
+
+#### 🔨 Projects:
+
+-   E-Commerce Product Page (Redux)
+-   Realtime Chat App
+-   Authentication System
+
+## 🧠 Weeks 11-12: Expert Level UI & Optimization
+
+### Goal: Scale & optimize large apps
+
+#### ✅ Topics:
+
+-   Code Splitting
+-   Lazy Loading
+-   Performance Optimization
+-   Testing (Jest/React Testing Library)
+-   SSR (Optional: Next.js intro)
+
+#### 🔨 Projects:
+
+-   Full E-Commerce Platform
+-   Trello-style Task Board
+-   Social Media Platform (with Firebase or dummy backend)
+-   Online Code Editor
+
+### 🧑‍💻 Bonus Suggestions:
+
+-   Daily practice: 1-2 hours of coding
+-   Weekly demo: Show your work on GitHub or CodeSandbox
+-   Write blogs: Share your learning on platforms like Hashnode, Dev.to
+-   Mock Interviews: Practice system design and code challenges
