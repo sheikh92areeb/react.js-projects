@@ -3,35 +3,51 @@ import logo from './assets/logo.jpg'
 
 
 function App() {
-  const [time, setTime] = useState(getCurrentTime());
+  const [time, setTime] = useState(getCurrentTime(true));
+  const [is12Hour, setIs12Hour] = useState(true);
+  const [date, setDate] = useState(getCurrentDate());
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(getCurrentTime());
+      setTime(getCurrentTime(is12Hour));
+      setDate(getCurrentDate());
     }, 1000);
 
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, []);
+    return () => clearInterval(interval);
+  }, [is12Hour]);
 
 
-  function getCurrentTime() {
+  function getCurrentTime(use12Hour) {
     const now = new Date();
     let hours = now.getHours();
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
-    const ampm = hours >= 12 ? 'PM' : 'AM';
+    let ampm = '';
 
-    // Convert to 12-hour format
-    hours = hours % 12 || 12;
+    if (use12Hour) {
+      ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+    }
 
-    // Add leading zeros
     hours = String(hours).padStart(2, '0');
     minutes = String(minutes).padStart(2, '0');
     seconds = String(seconds).padStart(2, '0');
 
-    return `${hours}:${minutes}:${seconds} ${ampm}`;
+    return use12Hour
+      ? `${hours}:${minutes}:${seconds} ${ampm}`
+      : `${String(now.getHours()).padStart(2, '0')}:${minutes}:${seconds}`;
+  }
+
+  function getCurrentDate() {
+    const now = new Date();
+    const options = {weekday: 'long', month: 'long', day: 'numeric', year:'numeric'}
+    return now.toLocaleDateString(undefined, options)
   }
   
+  const toggleFormat = () => {
+    setIs12Hour((prev) => !prev)
+    setTime(getCurrentTime(!is12Hour))
+  }
 
   return (
     <>
@@ -41,9 +57,17 @@ function App() {
           <h1 className='text-[#55e9fa] text-4xl font-semibold'>ClockDigi</h1>
         </div>
 
-        <div className="w-[650px] clock-container border-3 border-[#55e9fa] px-10 py-5 rounded-lg shadow-md shadow-[#55e9fa]">
-          <div className="time text-center text-[#55e9fa] text-7xl">
+        <div className="w-[90%] sm:w-[650px] clock-container border-3 border-[#55e9fa] px-10 py-5 pt-10 rounded-lg shadow-md shadow-[#55e9fa]">
+          <div className="time text-center text-[#55e9fa] text-4xl sm:text-7xl mb-10">
             {time}
+          </div>
+          <div className="actions flex justify-between">
+          <button onClick={toggleFormat} className='border border-[#55e9fa] text-xs sm:text-lg text-[#55e9fa] px-2 sm:px-4 py-1 rounded-full cursor-pointer'>
+            Switch to {is12Hour ? '24-hour' : '12-hour'}
+          </button>
+          <p className="date border border-[#55e9fa] text-[#55e9fa] text-xs sm:text-lg px-2 sm:px-4 py-1 rounded-full cursor-pointer">
+            {date}
+          </p>
           </div>
         </div>
       </div>
